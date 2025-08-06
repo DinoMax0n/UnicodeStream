@@ -50,6 +50,19 @@
         "text_encoding": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "codecvt": "cpp"
+        "codecvt": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "complex": "cpp",
+        "cstring": "cpp",
+        "expected": "cpp",
+        "ratio": "cpp",
+        "source_location": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "semaphore": "cpp",
+        "sstream": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
     }
 }

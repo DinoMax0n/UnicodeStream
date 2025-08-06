@@ -26,7 +26,7 @@ class WinCxxout { //  cxxout for Windows (Declaring a class with a private const
                 MessageBoxW(nullptr, L"Failed to output words to console", L"UnicodeStream" ,MB_OK | MB_ICONERROR);
             }
             else if (CharsWritten < CharsToWrite) {
-                MessageBoxW(nullptr, L"More characters than expected were output to the console", L"UnicodeStream" ,MB_OK, | MB_ICONWARNING);
+                MessageBoxW(nullptr, L"More characters than expected were output to the console", L"UnicodeStream" ,MB_OK | MB_ICONWARNING);
             }
         }
 
