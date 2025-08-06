@@ -2,8 +2,6 @@
 #define FMT_HEADER_ONLY
 #include "Includes.h"
 #include "Lib/utf8cpp/utf8.h"
-#include "Lib/fmt/format.h"
-#include "Lib/fmt/xchar.h"
 
 
 template <typename T>
