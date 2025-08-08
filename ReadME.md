@@ -5,7 +5,7 @@
 3. What would be clear even to a beginner
 
 ## Exemple how to connect
-`#include "macros.h"` And that's it, did you think it would be more?
+`#include "UnicodeStream.h"` And that's it, did you think it would be more?
 
 ## What UnicodeStream can do
 Exemple - ` dm::cxxout << "Hellow World!" << std::endl << "Привет Мир!" << std::endl << "世界您好" << std::endl << "Γεια σου κόσμε"; `
@@ -16,10 +16,10 @@ Out put - `Hellow World!
 Γεια σου κόσμε`
 # Features:
 - [x] cxxout for Windows platforms
-- [] cxxin for Windows platforms (In progress)
-- [] cxoout for Unix platforms
-- [] cxxin for Unix platform
-- [] Ability to color text
+- [ ] cxxin for Windows platforms (In progress)
+- [ ] cxxout for Unix platforms
+- [ ] cxxin for Unix platform
+- [ ] Ability to color text
 
 # How to Build: 
 There are almost no dependencies **NO**, all you need is already in the project and all you need from you is C++20 and Cmake support and that's it
@@ -35,7 +35,7 @@ There are almost no dependencies **NO**, all you need is already in the project 
  2. Чтобы каждый мог использовать нормальный ввод и вывод без сложностей в кодировках, локалях, гайдах все в 1 строке
  3. Что было бы понятно даже новичку
  ## Как подключить ? 
- `#include "macros.h"` И все, а вы думали будет больше ?
+ `#include "UnicodeStream.h"` И все, а вы думали будет больше ?
 
 ## Что может UnicodeStream ?
 Например - ` dm::cxxout << "Hellow World!" << std::endl << "Привет Мир!" << std::endl << "世界您好" << std::endl << "Γεια σου κόσμε"; `
@@ -46,10 +46,10 @@ There are almost no dependencies **NO**, all you need is already in the project 
 Γεια σου κόσμε`
 # Функции:
 - [x] cxxout для Windows платформ
-- [] cxxin для Windows платформ (В работе)
-- [] cxoout для Unix платформ
-- [] cxxin для Unix плафторм 
-- [] Возможность раскрашивать текст
+- [ ] cxxin для Windows платформ (В работе)
+- [ ] cxoout для Unix платформ
+- [ ] cxxin для Unix плафторм 
+- [ ] Возможность раскрашивать текст
 # Как собрать:
 Почти не каких зависимостей **НЕТУ** все что надо уже лежит в проекте и вам все что надо от вас это потдержка C++20 и Cmake и все
 # Коментарий от автора

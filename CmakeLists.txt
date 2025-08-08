@@ -6,7 +6,6 @@ project(UnicodeStream)
 set(CMAKE_BUILD_TYPE Debug)
 add_executable(UnicodeStream 
 # Add source file
-Source/main.cpp)
+Source/expemple.cpp)
 # Add .h file
-target_include_directories(UnicodeStream PRIVATE "${CMAKE_SOURCE_DIR}/Source/Include")
-target_include_directories(UnicodeStream PRIVATE "${CMAKE_SOURCE_DIR}/Source/Include/Lib/fmt") # For FMT
+target_include_directories(UnicodeStream PRIVATE "${CMAKE_SOURCE_DIR}/Source/UnicodeStream/")

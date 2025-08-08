@@ -1,6 +1,5 @@
 #pragma once
-#define FMT_HEADER_ONLY
-#include "Includes.h"
+#include "UnicodeStreamIncludes.h"
 #include "Lib/utf8cpp/utf8.h"
 
 
@@ -28,3 +27,10 @@ std::wstring FormatToWstring(const T& Value) {
     }
 }
 
+template <typename T>
+std::string FormatToString (const T& Value) {
+    std::wstring wstr = FormatToWstring(Value);
+    std::string utf8result;
+    utf8::utf16to8(wstr.begin(), wstr.end(), std::back_inserter(utf8result));
+    return utf8result;
+}
