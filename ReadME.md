@@ -14,16 +14,30 @@
   # Features:
   - [x] cxxout for Windows platforms
   - [x] cxxin for Windows platforms 
-  - [ ] Ability to collect in the library (Work in progress)
-  - [ ] cxxout for Unix platforms 
+  - [x] Ability to collect in the library 
+  - [ ] cxxout for Unix platforms (Work in progress)
   - [ ] cxxin for Unix platform
   - [ ] Ability to color text
 
   # How to Build: 
   There are no external dependencies. Everything is already in the project.
   All you need is a compiler with `C++20` support and `CMake` — that’s it.
+
+  `cmake ..` `cmake --build .`
+
+  ### Connect 
+  in CmakeLists.txt: 
   
- (At the moment, it is not possible to collect a static or dynamic library, only to include a header file)
+   `find_package(UnicodeStream REQUIRED)` 
+   
+   `add_executable(MyApp main.cpp) `
+   
+   `target_link_libraries(MyApp PRIVATE UnicodeStream::UnicodeStream) `
+
+  in .cpp :
+  `#include "UnicodeStream/UnicodeStream.h"`
+  
+
 
   # Comment from the author
   I was working on (and will most likely finish) a CLI chat project, but I ran into many problems with the standard iostream — so I created this.
@@ -48,13 +62,26 @@
   # Функции:
   - [x] cxxout для Windows платформ
   - [x] cxxin для Windows платформ 
-  - [ ] Возможность соберать в библиотеку (В работе)
-  - [ ] cxxout для Unix платформ 
+  - [x] Возможность соберать в библиотеку 
+  - [ ] cxxout для Unix платформ (В работе)
   - [ ] cxxin для Unix платформ 
   - [ ] Возможность раскрашивать текст
   # Как собрать:
-  Почти никаких зависимостей **НЕТ** — всё что нужно, уже в проектеи вам все что надо от вас это поддержка `C++20 `и `Cmake` и все
-  (На данный момент собрать в библиотеку статическую или динамическую не получиться только подключать заголовочный файл)
+  Почти никаких зависимостей **НЕТ** — всё что нужно, уже в проектеи вам все что надо от вас это поддержка `C++20 `и `Cmake` и все.
+
+  `cmake ..` `cmake --build .`
+  
+  ### Для подключения
+  в Cmake:
+  
+   `find_package(UnicodeStream REQUIRED)` 
+   
+   `add_executable(MyApp main.cpp) `
+   
+   `target_link_libraries(MyApp PRIVATE UnicodeStream::UnicodeStream) `
+  
+  в .cpp: `#include "UnicodeStream/UnicodeStream.h"`
+
   # Комментарий от автора
   Это мой 1 серьезный проект и он был вдохновлен не достсткатками когда я изучал и делал проект на C++, я делал (Скорее всего доделаю) cli чат но я столкнулся с множеством проблем стандартого ` iostream ` и сделал это
 
