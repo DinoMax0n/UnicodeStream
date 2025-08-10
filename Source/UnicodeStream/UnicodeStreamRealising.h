@@ -1,3 +1,6 @@
+/*
+INCLUDEME!!!!
+*/
 #pragma once
 
 #include "UnicodeStreamIncludes.h"
@@ -66,9 +69,9 @@ class WinCxxin {
             std::vector<wchar_t> VectorReadsFromConsole;
             DWORD CharsRead = 0;
             while (true) {
-                wchar_t BufferToReadConsole; 
+                wchar_t BufferToReadConsole = 0; 
                 if (!ReadConsoleW(Hin, &BufferToReadConsole, 1, &CharsRead, nullptr)) {
-                    MessageBoxW(nullptr, L"Failed to get read symbols" ,MB_OK | MB_ICONERROR);
+                    MessageBoxW(nullptr, L"Failed to get read symbols", L"UnicodeStream", MB_OK | MB_ICONERROR);
                 }
                 
                 if (BufferToReadConsole == L'\r') {
@@ -78,8 +81,8 @@ class WinCxxin {
                 VectorReadsFromConsole.push_back(BufferToReadConsole);
             
             }
-             std::wstring wstr(VectorReadsFromConsole.begin(), VectorReadsFromConsole.end());
-             InputText = FormatToString(wstr);
+            // Output input text
+            InputText = ParsedValue<T>(VectorReadsFromConsole);
         }
 
      public:
