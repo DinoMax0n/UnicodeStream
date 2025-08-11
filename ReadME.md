@@ -19,7 +19,7 @@
    `target_link_libraries(MyApp PRIVATE UnicodeStream::UnicodeStream) `
 
   in .cpp :
-  `#include "UnicodeStream/UnicodeStream.h"`
+  `#include "UnicodeStream.h"`
   
   And that's it, did you think it would be more?
 
@@ -68,7 +68,7 @@
    
    `target_link_libraries(MyApp PRIVATE UnicodeStream::UnicodeStream) `
   
-  в .cpp: `#include "UnicodeStream/UnicodeStream.h"`
+  в .cpp: `#include "UnicodeStream.h"`
   
   И все, а вы думали будет больше ?
 
