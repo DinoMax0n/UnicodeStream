@@ -29,7 +29,7 @@
   There are no external dependencies. Everything is already in the project.
   All you need is a compiler with `C++20` support and `CMake` — that’s it.
 
-  `cmake ..` `cmake --build .`
+  `cmake ..` `cmake --build .` `cmake --install .`
 
 
   # Comment from the author
@@ -75,7 +75,7 @@
   # Как собрать:
   Почти никаких зависимостей **НЕТ** — всё что нужно, уже в проекте вам все что надо от вас это поддержка `C++20 `и `Cmake` и все.
 
-  `cmake ..` `cmake --build .`
+  `cmake ..` `cmake --build .` `cmake --install .`
   
   # Комментарий от автора
   Это мой 1 серьезный проект и он был вдохновлен недостсткатками когда я изучал и делал проект на C++, я делал (Скорее всего доделаю) cli чат но я столкнулся с множеством проблем стандартого ` iostream ` и сделал это
