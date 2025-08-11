@@ -4,6 +4,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(UnicodeStream) 
 
+set_target_properties(UnicodeStream PROPERTIES PREFIX "")
+
+
 add_library(UnicodeStream SHARED
     Source/UnicodeStream/dummy.cpp
 )
