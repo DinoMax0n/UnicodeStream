@@ -31,11 +31,21 @@ std::wstring FormatToWstring(const T& Value) {
 }
 
 template <typename T>
-std::string FormatToString (const T& Value) {
-    std::wstring wstr = FormatToWstring(Value);
-    std::string utf8result;
-    utf8::utf32to8(wstr.begin(), wstr.end(), std::back_inserter(utf8result));
-    return utf8result;
+std::vector<char> FormatToString(const T& value) {
+    std::string utf8;
+
+    if constexpr (std::is_same_v<T, std::wstring>) {
+        utf8::utf32to8(value.begin(), value.end(), std::back_inserter(utf8));
+    }
+    else if constexpr (std::is_same_v<T, wchar_t>) {
+        std::wstring wstr(1, value);
+        utf8::utf32to8(wstr.begin(), wstr.end(), std::back_inserter(utf8));
+    }
+    else {
+        utf8 = std::to_string(value); 
+    }
+
+    return std::vector<char>(utf8.begin(), utf8.end());
 }
 
 template <typename T>

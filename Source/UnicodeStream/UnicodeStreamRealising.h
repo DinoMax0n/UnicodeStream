@@ -13,7 +13,7 @@ class WinCxxout { //  cxxout for Windows (Declaring a class with a private const
     private:
         WinCxxout() = default;
         template <typename T> 
-        void UWStream (const T& OutPutText) {
+        void UWWrite (const T& OutPutText) {
             HANDLE HOut = GetStdHandle(STD_OUTPUT_HANDLE);
             if (HOut == INVALID_HANDLE_VALUE || HOut == nullptr) {
                 MessageBoxW(nullptr, L"Failed to get console handle", L"UnicodeStream" ,MB_OK | MB_ICONERROR);
@@ -35,7 +35,7 @@ class WinCxxout { //  cxxout for Windows (Declaring a class with a private const
         friend WinCxxout& GetWinCxxout();
         template <typename T>
         WinCxxout& operator<<(const T& OutPutText) { // For anyone types
-            UWStream(OutPutText);
+            UWWrite(OutPutText);
             return *this;
         }  
         WinCxxout& operator<<(std::wostream& (*manip)(std::wostream&)) {
@@ -98,7 +98,35 @@ inline WinCxxin& GetWinCxxin() {
     return instance;
 } 
 
-#else // For Unix
+#else // For Unix Like OS
+#include <unistd.h>
+
+class UnixCxxout;
+inline UnixCxxout& GetUnixCxxout();
+
+class UnixCxxout {
+    private:
+        UnixCxxout() = default;
+        void UUWrite(const std::vector<char>& OutPutText) {
+            ssize_t SeccessWrite = write(STDOUT_FILENO, OutPutText.data(), OutPutText.size());
+            if (SeccessWrite == -1) {
+                std::cerr << "Failed to output words to console";
+            }
+        }
+    public:
+        friend UnixCxxout& GetUnixCxxout();
+        template <typename T>
+        UnixCxxout& operator<<(const T& OutPutText) { // For anyone types
+            auto buffer = FormatToString(OutPutText);
+            UUWrite(buffer);
+            return *this;
+        }  
+        UnixCxxout& operator<<(std::wostream& (*manip)(std::wostream&)) {
+            manip(std::wcout);
+            return *this;
+        }
+};
+
 
 
 
