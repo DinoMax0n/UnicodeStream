@@ -11,6 +11,7 @@ namespace dm {
     inline auto& cxxout = GetWinCxxout();
     inline auto& cxxin = GetWinCxxin();
 #else
-    
+    inline auto& cxxout = GetUnixCxxout();
+    inline auto& cxxin = GetUnixCxxin();
 #endif
 }

@@ -49,7 +49,7 @@ std::vector<char> FormatToString(const T& value) {
 }
 
 template <typename T>
-T ParsedValue(const std::vector<wchar_t>& Input) {
+T ParsedWinValue(const std::vector<wchar_t>& Input) {
     std::wstring wstr(Input.begin(), Input.end());
 
     if constexpr (std::is_same_v<T, bool>) {
@@ -79,6 +79,41 @@ T ParsedValue(const std::vector<wchar_t>& Input) {
         std::string Result;
         utf8::utf16to8(wstr.begin(), wstr.end(), std::back_inserter(Result));
         return Result;
+    }
+    else {
+        static_assert(sizeof(T) == 0, "Unsupported type for conversion");
+    }
+}
+
+template <typename T>
+T ParsedUnixValue(const std::vector<char>& Input) {
+    std::string str(Input.begin(), Input.end());
+
+    if constexpr (std::is_same_v<T, bool>) {
+        if (str == "true") {
+            return true;
+        } else if (str == "false") {
+            return false;
+        } else {
+            throw std::invalid_argument("Invalid boolean string");
+        }
+    }
+    else if constexpr (std::is_same_v<T, int>) {
+        try {
+            return std::stoi(str);
+        } catch (...) {
+            throw std::invalid_argument("Invalid int string");
+        }
+    }
+    else if constexpr (std::is_same_v<T, float>) {
+        try {
+            return std::stof(str);
+        } catch (...) {
+            throw std::invalid_argument("Invalid float string");
+        }
+    }
+    else if constexpr (std::is_same_v<T, std::string>) {
+        return str; 
     }
     else {
         static_assert(sizeof(T) == 0, "Unsupported type for conversion");

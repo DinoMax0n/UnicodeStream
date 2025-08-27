@@ -39,8 +39,8 @@
   - [x] cxxout for Windows platforms
   - [x] cxxin for Windows platforms 
   - [x] Ability to collect in the library 
-  - [ ] cxxout for Unix platforms (Work in progress)
-  - [ ] cxxin for Unix platform
+  - [x] cxxout for Unix platforms (Need a check)
+  - [ ] cxxin for Unix platform (Work in progress)
   - [ ] Ability to color text
   
   **If you see errors, write and I will try to fix it, but I will be grateful if you help and add a code solution**
@@ -86,7 +86,7 @@
   - [x] cxxout для Windows платформ
   - [x] cxxin для Windows платформ 
   - [x] Возможность собирать в библиотеку 
-  - [ ] cxxout для Unix платформ (В работе)
-  - [ ] cxxin для Unix платформ 
-  - [ ] Возможность раскрашивать текст
+  - [x] cxxout для Unix платформ (Надо проверка)
+  - [ ] cxxin для Unix платформ (В работе)
+  - [ ] Возможность раскрашивать текст 
   
