@@ -5,12 +5,17 @@
   3. To be simple and clear, even for beginners
 
   ## What UnicodeStream can do
-  Example - ` dm::cxxout << "Hello World!" << std::endl << "Привет Мир!" << std::endl << "世界您好" << std::endl << "Γεια σου κόσμε"; `
+  **Example** - ` dm::cxxout << "Hello World!" << std::endl << "Привет Мир!" << std::endl << "世界您好" << std::endl << "Γεια σου κόσμε"; `
   
   Output: ` Hello World! Привет Мир! 世界您好 Γεια σου κόσμε `
 
+  **Advanced example** - `dm::cxxout << dm::Color::Red() << "Hello World!" << dm::Color::Blue() << std::endl << "Привет Мир!" << std::endl << dm::Color::Yellow() << "世界您好!" << std::endl << dm::Color::Cyan() << "Γεια σου κόσμε!" << dm::Reset::All();`
+
+Output -  `Hello World! Привет Мир! 世界您好 Γεια σου κόσμε` 
+**BUT** with different effects (For more effects, `Windows Terminal` on Windows is recommended)
+
   ## Example Connect 
-  in CmakeLists.txt: 
+  in CMakeLists.txt: 
   
    `find_package(UnicodeStream REQUIRED)` 
    
@@ -29,7 +34,7 @@
   There are no external dependencies. Everything is already in the project.
   All you need is a compiler with `C++20` support and `CMake` — that’s it.
 
-  `cmake ..` `cmake --build .` `cmake --install .`
+  `CMake ..` `CMake --build .` `CMake --install .`
 
 
   # Comment from the author
@@ -40,8 +45,9 @@
   - [x] cxxin for Windows platforms 
   - [x] Ability to collect in the library 
   - [x] cxxout for Unix platforms (Need a check)
-  - [ ] cxxin for Unix platform (Work in progress)
-  - [ ] Ability to color text
+  - [x] cxxin for Unix platform (Need a check)
+  - [x] Ability to color text
+  - [ ] RGB color support (Work in progress)
   
   **If you see errors, write and I will try to fix it, but I will be grateful if you help and add a code solution**
 
@@ -52,15 +58,22 @@
   3. Что было бы понятно даже новичку
 
   ## Что может UnicodeStream ?
-  Например - ` dm::cxxout << "Hello World!" << std::endl << "Привет Мир!" << std::endl << "世界您好" << std::endl << "Γεια σου κόσμε"; `
+  **Простой пример** - ` dm::cxxout << "Hello World!" << std::endl << "Привет Мир!" << std::endl << "世界您好" << std::endl << "Γεια σου κόσμε"; `
 
   Выведется - `Hello World!
   Привет Мир!
   世界您好
   Γεια σου κόσμε`
 
+  **Продвинутый пример** - `dm::cxxout << dm::Color::Red() << "Hello World!" << dm::Color::Blue() << std::endl << "Привет Мир!" << std::endl << dm::Color::Yellow() << "世界您好" << std::endl << dm::Color::Cyan() << "Γεια σου κόσμε" << dm::Reset::All();`
+  
+  Выведеться - `Hello World!
+  Привет Мир!
+  世界您好
+  Γεια σου κόσμε` **НО** с разными эфектами (Для большего количества эффектов рекомендуется `Windows Terminal` на Windows)
+
  ### Для подключения
-  в Cmake:
+  в CMake:
   
    `find_package(UnicodeStream REQUIRED)` 
    
@@ -73,12 +86,12 @@
   И все, а вы думали будет больше ?
 
   # Как собрать:
-  Почти никаких зависимостей **НЕТ** — всё что нужно, уже в проекте вам все что надо от вас это поддержка `C++20 `и `Cmake` и все.
+  Почти никаких зависимостей **НЕТ** — всё что нужно, уже в проекте вам все что надо от вас это поддержка `C++20 `и `CMake` и все.
 
-  `cmake ..` `cmake --build .` `cmake --install .`
+  `CMake ..` `CMake --build .` `CMake --install .`
   
   # Комментарий от автора
-  Это мой 1 серьезный проект и он был вдохновлен недостсткатками когда я изучал и делал проект на C++, я делал (Скорее всего доделаю) cli чат но я столкнулся с множеством проблем стандартого ` iostream ` и сделал это
+  Это мой 1 серьезный проект и он был вдохновлен недостатками когда я изучал и делал проект на C++, я делал (Скорее всего доделаю) cli чат но я столкнулся с множеством проблем стандартного ` iostream ` 
 
   **Если увидите ошибки напишите и я попробую исправить но буду благодарен, если вы поможете и предложите решение в коде**
 
@@ -87,6 +100,7 @@
   - [x] cxxin для Windows платформ 
   - [x] Возможность собирать в библиотеку 
   - [x] cxxout для Unix платформ (Надо проверка)
-  - [ ] cxxin для Unix платформ (В работе)
-  - [ ] Возможность раскрашивать текст 
+  - [x] cxxin для Unix платформ (Надо проверка)
+  - [x] Возможность раскрашивать текст 
+  - [ ] Поддержка RGB цветов (В работе)
   

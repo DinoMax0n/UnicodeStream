@@ -1,23 +1,24 @@
 cmake_minimum_required(VERSION 3.10)
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(UnicodeStream) 
+project(UnicodeStream)
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/UnicodeStreamLib" CACHE PATH "Install path" FORCE)
 endif()
 
-
 add_library(UnicodeStream SHARED
-    Source/UnicodeStream/dummy.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Source/UnicodeStream/dummy.cpp
 )
 
-set_target_properties(UnicodeStream PROPERTIES PREFIX " ")
+set_target_properties(UnicodeStream PROPERTIES PREFIX "")
 
 target_include_directories(UnicodeStream PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/Source/UnicodeStream
-    ${CMAKE_CURRENT_SOURCE_DIR}/Source/UnicodeStream/Lib/utf8cpp
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Source/UnicodeStream>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Source/UnicodeStream/Lib/utf8cpp>
+    $<INSTALL_INTERFACE:include>
 )
 
 install(TARGETS UnicodeStream
@@ -28,7 +29,7 @@ install(TARGETS UnicodeStream
     INCLUDES DESTINATION include
 )
 
-install(DIRECTORY Source/UnicodeStream/
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Source/UnicodeStream/
     DESTINATION include
     FILES_MATCHING PATTERN "*.h"
 )
