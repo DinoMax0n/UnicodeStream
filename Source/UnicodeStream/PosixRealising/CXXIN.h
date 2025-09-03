@@ -10,7 +10,7 @@ inline UnixCxxin& GetUnixCxxin();
 
 class UnixCxxin {
     private:
-        UnixCxxint() = default;
+        UnixCxxin() = default;
         template <typename T>
         void UURead (T &InputText) {
             std::vector<char> ArrayInputText;
