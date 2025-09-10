@@ -4,6 +4,7 @@ INCLUDEME!!!!
 #pragma once 
 
 #include "ANSI/Ansi.h"
+#include "Functions/Format.h"
 
 namespace dm {
 // For Windows

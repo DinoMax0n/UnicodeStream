@@ -6,4 +6,4 @@ INCLUDE UnicodeStream you need to incude "UnicodeStream.h" */
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Functions.h"
+#include "Functions/Functions.h"

@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/Source/Includes/**"
+                "${workspaceFolder}/Source/UnicodeStream/**"
             ],
             "defines": [
                 "_DEBUG",

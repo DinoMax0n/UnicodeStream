@@ -47,7 +47,8 @@ Output -  `Hello World! Привет Мир! 世界您好 Γεια σου κόσ
   - [x] cxxout for Unix platforms (Need a check)
   - [x] cxxin for Unix platform (Need a check)
   - [x] Ability to color text
-  - [ ] RGB color support (Work in progress)
+  - [x] RGB color support 
+  - [x] Simplified use of UTF8Cpp
   
   **If you see errors, write and I will try to fix it, but I will be grateful if you help and add a code solution**
 
@@ -102,5 +103,6 @@ Output -  `Hello World! Привет Мир! 世界您好 Γεια σου κόσ
   - [x] cxxout для Unix платформ (Надо проверка)
   - [x] cxxin для Unix платформ (Надо проверка)
   - [x] Возможность раскрашивать текст 
-  - [ ] Поддержка RGB цветов (В работе)
+  - [x] Поддержка RGB цветов 
+  - [x] Упрощенно использывание UTF8Cpp 
   

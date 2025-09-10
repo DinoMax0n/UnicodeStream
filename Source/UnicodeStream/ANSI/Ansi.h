@@ -2,7 +2,7 @@
 This file was created to quickly combine all formatting into 1 file 
 (maybe you only need formatting)*/
 
-#include "../Includes.h"
+#include <string>
 #include "Color.h"
 #include "BackGround.h"
 #include "Style.h"
@@ -20,6 +20,6 @@ namespace dm {
                "\033[27m"  // Reverse
                "\033[28m"  // Hidden
                "\033[29m"; // Strike
-    }
+        }
     }
 }

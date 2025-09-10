@@ -64,5 +64,6 @@
         "sstream": "cpp",
         "stop_token": "cpp",
         "thread": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": "C:/CPP/mingw64/bin/clang++.exe"
 }

@@ -1,5 +1,7 @@
 #pragma once 
 
+#include "../Includes.h"
+
 namespace dm {
     namespace Style {
         std::string Bold()       { return "\033[1m"; }
@@ -10,5 +12,5 @@ namespace dm {
         std::string Reverse()    { return "\033[7m"; }
         std::string Hidden()     { return "\033[8m"; }
         std::string Strike()     { return "\033[9m"; }
-}
+    }
 }

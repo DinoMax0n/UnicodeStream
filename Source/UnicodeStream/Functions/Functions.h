@@ -1,11 +1,17 @@
+/*
+ATTENTION!!!!!
+These features are not intended to be used outside the library, 
+there is another  .h that adds these features
+Don't Include me !!!
+*/
+
 #pragma once
 
-#include "Includes.h"
-#include "Lib/utf8cpp/utf8.h"
+#include "../Includes.h"
+#include "../Lib/utf8cpp/utf8.h"
 #include <variant>
 #include <algorithm>
 #include <stdexcept>
-
 
 template <typename T>
 std::wstring FormatToWstring(const T& Value) {
